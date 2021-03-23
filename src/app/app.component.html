@@ -1,0 +1,9 @@
+<div *ngIf="!servi.userLogg">
+    <app-inicio></app-inicio>
+</div>
+<div *ngIf="servi.userLogg">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

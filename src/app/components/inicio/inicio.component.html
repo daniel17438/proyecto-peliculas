@@ -1,0 +1,80 @@
+<div class="container-inicio">
+
+    <div class="caja-formulario">
+        <div *ngIf="bienvenido" class="bienvenida">
+            <h4 class="text-primary">Bienvenidos a <br><span class="pelispro-estilo">PelisPro</span> </h4>
+
+
+            <div class="opcion">
+                <img src="/assets/img/inicio4.jpg" alt="" width="200" height="200">
+            </div>
+            <button (click)="bienvenido=false; login=true" class="btn btn-primary w-50">Entrar</button>
+        </div>
+        <div *ngIf="login" class="login">
+            <div class="container">
+                <form [formGroup]="formG">
+                    <div>
+
+
+                        <div class="container">
+                            <img class="logo-pelispro " src="/assets/img/inicioPrincipal.png" class="img-fluid " alt="" width="50" height="50">
+                            <h3 class="t-login">login</h3>
+                        </div>
+
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="exampleInputEmail1" class="form-label ">Ingrese su correo</label>
+                        <input id="correo" class=" form-control" name="correo" formControlName="correo" type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
+                        <input id="pws" class="text-dark form-control" type="password" name="pws" formControlName="pws" required>
+                    </div>
+
+                    <button (click)="onSubmit()" type="button" class="btn btn-primary w-50">Login</button>
+                    <div class="registrate">
+                        <p (click)="login=false; registro=true">¿Aun no tienes cuenta? Registrate</p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div *ngIf="registro" class="registro">
+            <div class="container">
+                <form>
+                    <h4 class="mb-4">Registrate</h4>
+                    <div class="text-left mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Ingrese sus nombre y apellidos</label>
+                        <input type="text" [(ngModel)]="usuarioRegistro.nombre" name="name" class="form-control" id="exampleInputPassword1">
+                    </div>
+
+                    <div class="text-left mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Ingrese su correo</label>
+                        <input type="email" [(ngModel)]="usuarioRegistro.email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+
+                    </div>
+
+                    <div class="text-left mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Ingrese su nueva contraseña</label>
+                        <input type="password" [(ngModel)]="usuarioRegistro.password1" name="password" class="form-control">
+                    </div>
+
+                    <div class="text-left mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Repita su nueva contraseña</label>
+                        <input type="password" [(ngModel)]="usuarioRegistro.password2" name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+
+                    <!-- <div class="text-left mb-3 form-check">
+                        <input type="checkbox" [(ngModel)]="usuarioRegistro.recordar" name="check" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Recordar datos</label>
+                    </div> -->
+
+                    <button (click)="registrar()" type="button" class="btn btn-primary w-50">Registrar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
