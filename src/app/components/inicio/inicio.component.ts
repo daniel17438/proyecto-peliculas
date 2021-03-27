@@ -46,7 +46,7 @@ password: boolean;
   buildForm() {
     this.formG = this.formB.group({
       correo: [null, Validators.required],
-      pws: [null, [Validators.required, Validators.minLength(5)]],
+      pws: [null, [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -162,6 +162,10 @@ validarPassword() {
   }
 }
 
+validarCampo( campo ){
+  let input=campo;
+console.log( this.usuarioRegistro+"."+input)
+}
 }
 
 

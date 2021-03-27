@@ -26,6 +26,15 @@
     -moz-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
 }
 
+@media screen and (max-width: 768px) {
+    .caja-formulario {
+        width: 90%;
+    }
+    .container-inicio {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
 .bienvenida {
     display: flex;
     height: 90%;
@@ -61,4 +70,18 @@
 
 .titulo-login {
     margin: 91px 0 36px;
+}
+
+.campo-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.has-danger {
+    border: 1px solid rgb(255, 1, 1);
+}
+
+.altura-formulario-registro {
+    height: 580px;
 }

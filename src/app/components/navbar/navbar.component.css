@@ -29,3 +29,7 @@
 .text-primary a:hover {
     text-decoration: underline;
 }
+
+.text-dark:hover {
+    text-decoration: underline;
+}
