@@ -4,17 +4,23 @@ import { CarteleraComponent } from './components/cartelera/cartelera.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
-import { PeliComponent} from './components/peli/peli.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { AuthorizationGuard } from './guards/authorization.guard';
+import { AboutComponent } from './components/about/about.component';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 
 const routes: Routes = [
-  {path: 'cartelera', component: CarteleraComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'pelicula', component: PeliculaComponent},
-  {path: 'peli', component: PeliComponent},
-  {path: 'registro', component: RegistroComponent},
+  {path: 'cartelera', component: CarteleraComponent, canActivate: [ AuthorizationGuard ]},
+  {path: 'login', component: LoginComponent, canActivate: [ AuthorizationGuard ]},
+  // {path: 'about', component: AboutComponent, canActivate: [ AuthorizationGuard ]},
+  // {path: 'acerca-de', component: AcercaDeComponent, canActivate: [ AuthorizationGuard ]},
+  {path: 'pelicula', component: PeliculaComponent, canActivate: [ AuthorizationGuard ]},
+  {path: 'registro', component: RegistroComponent, canActivate: [ AuthorizationGuard ]},
+  {path: 'buscador/:id', component: BuscadorComponent, canActivate: [ AuthorizationGuard ]},
   {path: 'inicio', component: InicioComponent},
+  {path: 'auth', loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )},
   {path: '**', pathMatch: 'full', redirectTo: 'cartelera'}
 ];
 

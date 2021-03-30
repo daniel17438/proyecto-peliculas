@@ -16,14 +16,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { PeliComponent } from './components/peli/peli.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AboutComponent } from './components/about/about.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
-// import {MatButtonModule} from '@angular/material/button';
-// import {MatInputModule} from '@angular/material/input';
-// import {MatFormFieldModule} from '@angular/material/form-field';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -36,10 +32,9 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
     NavbarComponent,
     RegistroComponent,
     PeliculaComponent,
-    PeliComponent,
     InicioComponent,
-    AboutComponent,
-    AcercaDeComponent,
+    // AboutComponent,
+    // AcercaDeComponent,
 
   ],
   imports: [
@@ -51,10 +46,8 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    // MatButtonModule,
-    // MatInputModule,
-    // MatFormFieldModule,
-    // BrowserAnimationsModule
+
+
 
 
 

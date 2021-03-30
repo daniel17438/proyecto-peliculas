@@ -23,13 +23,25 @@
 }
 
 .text-primary a {
-    color: rgb(0, 0, 0) !important;
+    font-family: 'Candal', sans-serif !important;
+    color: #ffffff;
+}
+
+.text-dark {
+    font-family: 'Candal', sans-serif !important;
+    color: #ffffff !important;
 }
 
 .text-primary a:hover {
     text-decoration: underline;
+    color: rgb(29, 153, 211) !important;
 }
 
 .text-dark:hover {
     text-decoration: underline;
+    color: rgb(29, 153, 211) !important;
+}
+
+.navbar-dark {
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }

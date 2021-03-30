@@ -5,7 +5,7 @@
             <h5 class="card-title">{{peliculas.original_title}}</h5>
             <p *ngIf="peliculas.overview.length > 0" class="card-text">{{peliculas.overview | slice:0:100}}... </p>
             <p *ngIf="peliculas.overview.length == 0" class="card-text"> <img src="assets/img/mensaje.ico" alt=""> Disculpe... <br><br> Aun no hemos agregado descripcion para este contenido... </p>
-            <button href="#" class="btn btn-primary d-block bajar">Ver mas...</button>
+            <button [routerLink]="['/buscador', peliculas.id]" class="btn btn-primary d-block bajar">Ver mas...</button>
         </div>
     </div>
 </div>

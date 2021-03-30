@@ -80,7 +80,7 @@
 
                     <div class="text-left mb-3">
                         <label for="exampleInputPassword1" class="form-label">Ingrese su nueva contraseña</label>
-                        <input [ngClass]="{ 'has-danger': (password1.errors?.minlength || password1.errors?.required)&& password1.touched }" type="password" [(ngModel)]="usuarioRegistro.password1" name="password" class="form-control" minlength="6" required #password1="ngModel">
+                        <input [ngClass]="{ 'has-danger': (password1.errors?.minlength || password1.errors?.required)&& password1.touched }" type="password" [(ngModel)]="usuarioRegistro.password1" name="password1" class="form-control" minlength="6" required #password1="ngModel">
                         <div class="campo-error" *ngIf="password1.errors?.required">
                             Este campo es requerido.
                         </div>
@@ -91,7 +91,7 @@
 
                     <div class="text-left mb-3">
                         <label for="exampleInputPassword1" class="form-label">Repita su nueva contraseña</label>
-                        <input [ngClass]="{ 'has-danger': (password2.errors?.minlength || password2.errors?.required)&& password2.touched }" type="password" [(ngModel)]="usuarioRegistro.password2" name="password" class="form-control" minlength="6" required #password2="ngModel">
+                        <input [ngClass]="{ 'has-danger': (password2.errors?.minlength || password2.errors?.required)&& password2.touched }" type="password" [(ngModel)]="usuarioRegistro.password2" name="password2" class="form-control" minlength="6" required #password2="ngModel">
                         <div class="campo-error" *ngIf="password2.errors?.required">
                             Este campo es requerido.
                         </div>

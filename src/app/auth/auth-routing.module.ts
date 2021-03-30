@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '../components/about/about.component';
 import { AcercaDeComponent } from '../components/acerca-de/acerca-de.component';
 
-const routes: Routes = [
+export const routes: Routes = [
 {
 path: '',
 children:[
@@ -15,15 +15,22 @@ children:[
   {
     path: 'acerca-de',
     component: AcercaDeComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'cartelera'
   }
 
 ]
 }]
 
 @NgModule({
-  declarations: [],
+
   imports: [
-    CommonModule
+   RouterModule.forChild( routes )
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class AuthRoutingModule { }

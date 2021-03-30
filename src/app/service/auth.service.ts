@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  public userLogg: boolean;
+  public loading: boolean = false;
+
+  public userLogg= true;
 
   constructor( public afAuth: AngularFireAuth, public router: Router ) {
       // con esto recibimos e usuraio que hemos registrado
@@ -45,6 +47,8 @@ confirmarSalida() {
   }).then((result) => {
     if (result.value) {
       this.afAuth.signOut();
+      this.userLogg= null;
+      localStorage.removeItem('usuario');
       this.router.navigateByUrl('/inicio');
     }
   });

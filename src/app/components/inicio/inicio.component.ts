@@ -51,17 +51,19 @@ password: boolean;
   }
 
   onSubmit() {
-    this.loading = true;
+    this.auth.loading = true;
     this.usuario.correo = this.formG.value.correo;
     this.usuario.password = this.formG.value.pws;
     this.auth.login(this.usuario.correo, this.usuario.password).then((user: any) => {
-        this.loading = false;
+      this.auth.loading = false;
+        this.auth.userLogg= true;
+        localStorage.setItem( 'usuario', 'logue' );
 
         this.messageSuccess();
         this.router.navigateByUrl('/cartelera');
         // this.auth.saveStorage(user.user.uid);
         }).catch(error => {
-      this.loading = false;
+      this.auth.loading = false;
       this.messageError();
       return;
     });
@@ -120,22 +122,28 @@ messageError() {
 }
 
 registrar( ){
+
   this.validarPassword();
   if (this.password) {
      return;
   }
+  this.auth.loading = true;
+
   this.auth.register(  this.usuarioRegistro.email , this.usuarioRegistro.password1 ).then(data => {
+    this.auth.loading = false;
     console.log(data);
     this.auth.userLogg= true;
     this.router.navigateByUrl("/cartelera");
   } ).catch(error => {
-    this.loading = false;
+    this.auth.loading = false;
+
     Swal.fire({
       icon: 'error',
       title: error.message,
       text: 'Por favor verifique',
     });
     return;
+
   });
 
 

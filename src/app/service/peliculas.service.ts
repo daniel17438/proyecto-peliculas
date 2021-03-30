@@ -67,6 +67,8 @@ export class PeliculasService {
     return this.http.get(`${this.urlMovieDb}/search/movie?query=${texto}
 &sort_by=popularity.desc&api_key=${this.apiKey}&language=es&page=1`);
   }
-
+  buscarById(id: any) {
+    return this.http.get(`${this.urlMovieDb}/movie/${id}?api_key=${this.apiKey}&language=es&page=1`);
+  }
 
 }

@@ -14,10 +14,10 @@
                     <a class="nav-link" (click)="authService.logout()">Logout</a>
                 </li>
                 <li class="nav-item text-primary">
-                    <a class="nav-link">Acerca de</a>
+                    <a class="nav-link" routerLink="auth/about">About</a>
                 </li>
                 <li class="nav-item text-primary">
-                    <a class="nav-link">About</a>
+                    <a class="nav-link" routerLink="auth/acerca-de">Contacto</a>
                 </li>
 
             </ul>
@@ -25,10 +25,11 @@
 
                 <input type="text" class="form-control text-center " placeholder="Buscar peliculas" [(ngModel)]="buscar" name="buscar" (keyup.enter)="buscarPeliculas()">
 
-                <button (click)="buscarPeliculas()" class="btn btn-outline-dark" type="button">Buscar</button>
+                <button (click)="buscarPeliculas()" class="btn btn-outline-light" type="button">Buscar</button>
                 <a (keyup.enter)="buscarPeliculas()" href=""></a>
             </form>
         </div>
     </div>
 </nav>
+<div *ngIf="noEncontrado" class="alert alert-danger">No se encontraron peliculas</div>
 <app-pelicula *ngIf="peliculas?.length > 0" [pasar]="peliculas"></app-pelicula>

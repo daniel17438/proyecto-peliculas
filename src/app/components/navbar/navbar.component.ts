@@ -11,6 +11,8 @@ import { AuthService } from '../../service/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
+  public noEncontrado = false;
+
   peliculas: []= [];
   loading: boolean=false;
 
@@ -25,21 +27,28 @@ export class NavbarComponent implements OnInit {
     if (this.buscar.length === 0) {
       return;
     }
+    this.noEncontrado = false;
+    this.authService.loading = true;
+
     this.servi.buscarPeliculas(this.buscar).subscribe((data: any) => {
-      this.loading = false;
+
+      this.authService.loading = false;
       console.log(data)
+
+
 
       this.peliculas = data.results;
       if (this.peliculas.length === 0) {
-        // this.noEncontrado = true;
+        this.noEncontrado = true;
       }
+
 
       this.buscar= "";
 
       this.router.navigateByUrl("/pelicula");
     }, error => {
       console.log(error);
-      this.loading = false;
+      this.authService.loading = false;
 
 
 

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PeliComponent } from './peli.component';
+import { BuscadorComponent } from './buscador.component';
 
-describe('PeliComponent', () => {
-  let component: PeliComponent;
-  let fixture: ComponentFixture<PeliComponent>;
+describe('BuscadorComponent', () => {
+  let component: BuscadorComponent;
+  let fixture: ComponentFixture<BuscadorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PeliComponent ]
+      declarations: [ BuscadorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PeliComponent);
+    fixture = TestBed.createComponent(BuscadorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
