@@ -5,7 +5,7 @@
     min-width: 300px;
     max-width: 300px;
     max-height: 500px;
-    min-height: 500px;
+    min-height: 430px;
     opacity: .8;
 }
 
@@ -29,4 +29,8 @@
     position: absolute;
     bottom: 10px;
     width: 90%;
+}
+
+.container {
+    margin-top: 80px !important;
 }

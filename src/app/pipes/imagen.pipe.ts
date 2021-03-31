@@ -18,6 +18,14 @@ export class ImagenPipe implements PipeTransform {
       return 'assets/img/sinImagen.jpg';
     }
   }
+    if (pelicula.backdrop_path !== null) {
+      return url + pelicula.backdrop_path;
+    } else if (pelicula.poster_path !== null) {
+      return url + pelicula.poster_path;
+    } else {
+      return 'assets/img/sinImagen.jpg';
+    }
+
 
 
 

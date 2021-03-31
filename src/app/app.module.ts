@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AboutComponent } from './components/about/about.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 
 
@@ -33,8 +34,7 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
     RegistroComponent,
     PeliculaComponent,
     InicioComponent,
-    // AboutComponent,
-    // AcercaDeComponent,
+    BuscadorComponent
 
   ],
   imports: [
@@ -46,6 +46,7 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+
 
 
 

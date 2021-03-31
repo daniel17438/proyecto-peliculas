@@ -14,8 +14,6 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 const routes: Routes = [
   {path: 'cartelera', component: CarteleraComponent, canActivate: [ AuthorizationGuard ]},
   {path: 'login', component: LoginComponent, canActivate: [ AuthorizationGuard ]},
-  // {path: 'about', component: AboutComponent, canActivate: [ AuthorizationGuard ]},
-  // {path: 'acerca-de', component: AcercaDeComponent, canActivate: [ AuthorizationGuard ]},
   {path: 'pelicula', component: PeliculaComponent, canActivate: [ AuthorizationGuard ]},
   {path: 'registro', component: RegistroComponent, canActivate: [ AuthorizationGuard ]},
   {path: 'buscador/:id', component: BuscadorComponent, canActivate: [ AuthorizationGuard ]},

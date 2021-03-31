@@ -9,6 +9,7 @@ import { PeliculasService } from '../../service/peliculas.service';
 })
 export class BuscadorComponent implements OnInit {
 
+  url = 'http://image.tmdb.org/t/p/w300';
   pelicula: any;
   regresar = '';
   busqueda = '';
