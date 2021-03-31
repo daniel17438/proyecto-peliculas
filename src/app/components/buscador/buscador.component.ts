@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PeliculasService } from '../../service/peliculas.service';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-buscador',
@@ -16,17 +17,18 @@ export class BuscadorComponent implements OnInit {
   loading: boolean;
 
   constructor(public route: ActivatedRoute,
-              public servi: PeliculasService ) {
+              public servi: PeliculasService, public auth: AuthService ) {
 
-
+this.auth.loading=true;
                 this.route.params.subscribe((data: any) => {
 
                   this.servi.buscarById(data.id).subscribe((pelicula: any[]) => {
-                    this.loading = false;
+                    this.auth.loading = false;
                     console.log(pelicula);
                     this.pelicula = pelicula;
                   }, error => {
-                    this.loading = false;
+                    this.auth.loading= false;
+
 
                   });
                 });
