@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '../components/about/about.component';
 import { AcercaDeComponent } from '../components/acerca-de/acerca-de.component';
+import { HeaderComponent } from '../components/header/header.component';
 
 export const routes: Routes = [
 {
@@ -15,6 +16,10 @@ children:[
   {
     path: 'acerca-de',
     component: AcercaDeComponent
+  },
+  {
+    path: 'header',
+    component: HeaderComponent
   },
   {
     path: '**',
